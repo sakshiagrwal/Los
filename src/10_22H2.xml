@@ -206,6 +206,12 @@
 		<c>driver_mdmsonyu.inf</c>
 		<c>driver_mdmsun1.inf</c>
 		<c>driver_mdmsun2.inf</c>
+		<c>driver_mdmsupr3.inf</c>
+		<c>driver_mdmsupra.inf</c>
+		<c>driver_mdmsuprv.inf</c>
+		<c>driver_mdmtdk.inf</c>
+		<c>driver_mdmtdkj2.inf</c>
+		<c>driver_mdmtdkj3.inf</c>
 		<c>driver_mdmtdkj4.inf</c>
 		<c>driver_mdmtdkj5.inf</c>
 		<c>driver_mdmtdkj6.inf</c>
@@ -278,6 +284,7 @@
 		<c>driver_wvmic.inf</c>
 		<c>driver_wvmic_ext.inf</c>
 		<c>driver_wvpci.inf</c>
+		<c>dvdplay 'DVD Play'</c>
 		<c>embeddedexperience 'Device Lockdown (Embedded Experience)'</c>
 		<c>embeddedmode 'Embedded Mode'</c>
 		<c>enhancedstorage 'Enhanced Storage'</c>
@@ -286,7 +293,7 @@
 		<c>errorreporting 'Windows Error Reporting'</c>
 		<c>eudcedit 'Private Character Editor'</c>
 		<c>eventviewer32 'Event Viewer - 32 bit'</c>
-		<c>F46D4000-FD22-4DB4-AC8E-48FE 'Add Folder Suggestions dialog'</c>
+		<c>F46D4000-FD22-4DB4-AC8E-4E1DDDE828FE 'Add Folder Suggestions dialog'</c>
 		<c>facerecognition 'Face Recognition'</c>
 		<c>fciclient 'File Server Resource Manager'</c>
 		<c>filehistory 'File History'</c>
@@ -298,7 +305,7 @@
 		<c>font_microsoftyaheilight 'Microsoft YaHei Light &amp; Microsoft YaHei UI Light'</c>
 		<c>font_mingliub 'MingLiU-ExtB &amp; PMingLiU-ExtB &amp; MingLiU_HKSCS-ExtB'</c>
 		<c>font_yugothic 'Yu Gothic Regular &amp; Yu Gothic UI Semilight'</c>
-		<c>font_yugothicbold 'Yu Gothic Bold Yu Gothic UI Semibold &amp; Yu Gothic UI Bold'</c>
+		<c>font_yugothicbold 'Yu Gothic Bold &amp; Yu Gothic UI Semibold &amp; Yu Gothic UI Bold'</c>
 		<c>font_yugothiclight 'Yu Gothic Light &amp; Yu Gothic UI Light'</c>
 		<c>font_yugothicmedium 'Yu Gothic Medium &amp; Yu Gothic UI Regular'</c>
 		<c>fsmgmt 'Shared Folders UI'</c>
@@ -507,12 +514,12 @@
 			<Feature enabled="yes">iCloud</Feature>
 			<Feature enabled="no">ManualSetup</Feature>
 			<Feature enabled="yes">OfficeSupport</Feature>
-			<Feature enabled="no">AppxSupport</Feature>
+			<Feature enabled="yes">AppxSupport</Feature>
 			<Feature enabled="yes">Netflix</Feature>
 			<Feature enabled="yes">NetworkDiscovery</Feature>
 			<Feature enabled="yes">NightLight</Feature>
 			<Feature enabled="no">NvidiaSetup</Feature>
-			<Feature enabled="no">OOBE</Feature>
+			<Feature enabled="yes">OOBE</Feature>
 			<Feature enabled="yes">Printing</Feature>
 			<Feature enabled="no">Recommended-All</Feature>
 			<Feature enabled="no">SamsungSwitch</Feature>
@@ -548,7 +555,7 @@
 	<Features>
 		<Feature name="Language.TextToSpeech~~~en-us~0.0.1.0">false</Feature>
 		<Feature name="Printing-XPSServices-Features">false</Feature>
-		<Feature name="Microsoft-Windows-Subsystem-Linux">false</Feature>
+		<Feature name="Microsoft-Windows-Subsystem-Linux">true</Feature>
 	</Features>
 	<Packages></Packages>
 	<Commands>
@@ -563,11 +570,12 @@
 		<AnswerFileLocationPanther>false</AnswerFileLocationPanther>
 		<AnswerFileLocationBoot>true</AnswerFileLocationBoot>
 		<SaveBothArch>false</SaveBothArch>
-		<EditionPrompt>falsse</EditionPrompt>
+		<EditionPrompt>false</EditionPrompt>
 		<settings pass="oobeSystem">
 			<component name="Microsoft-Windows-Shell-Setup">
 				<OEMInformation>
-					<Model>v0.5.1</Model>
+					<Model>v0.1</Model>
+					<SupportURL>https://los.in</SupportURL>
 				</OEMInformation>
 				<OOBE>
 					<HideEULAPage>false</HideEULAPage>
@@ -616,7 +624,7 @@
 				</ImageInstall>
 				<UserData>
 					<AcceptEula>false</AcceptEula>
-					<FullName>file_name</FullName>
+					<FullName>Los</FullName>
 					<ProductKey>
 						<Key></Key>
 					</ProductKey>
@@ -826,6 +834,9 @@
 			<Task>imageOptionsDontBackupPresetLog</Task>
 			<Task>imageOptionsCreateIso</Task>
 		</ImageTasks>
+		<AutoIsoFile>C:\Los_v0.1.iso</AutoIsoFile>
+		<AutoIsoLabel>Los</AutoIsoLabel>
+		<AutoSplitSize>4000</AutoSplitSize>
 		<CleanHotfixedLeftovers>3</CleanHotfixedLeftovers>
 		<ReuseDriverCache>true</ReuseDriverCache>
 	</ApplyOptions>
@@ -834,4 +845,7 @@
 		<Change></Change>
 		<Add></Add>
 	</Execution>
+	<Registry>
+		<File>C:\Los.reg</File>
+	</Registry>
 </Preset>
