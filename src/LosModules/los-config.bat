@@ -3,7 +3,7 @@ set branch="22H2"
 set ver="v0.0.1"
 
 :: other variables (do not touch)
-set "currentuser=%WinDir%\AtlasModules\NSudo -U:C -P:E -Wait"
+set "currentuser=%WinDir%\LosModules\NSudo -U:C -P:E -Wait"
 set "setSvc=call :setSvc"
 set "firewallBlockExe=call :firewallBlockExe"
 
