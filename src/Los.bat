@@ -1,0 +1,24 @@
+@echo off
+SETLOCAL EnableDelayedExpansion
+echo Please wait. This may take a moment. DO NOT CLOSE THIS WINDOW!
+
+:start
+set success=
+C:\Windows\AtlasModules\NSudo.exe -U:T -P:E -Wait C:\Windows\LosModules\los-config.bat /start
+
+:: read from success file
+set /p success= < C:\Users\Public\file.txt
+
+:: check if script is finished
+if %success% equ true goto success
+
+:: if not, restart script
+echo SCRIPT CLOSED!
+echo Relaunche...
+goto start
+
+:success
+del /f /q "C:\Users\Public\file.txt"
+shutdown /r /f /t 10 /c "Reboot is required"
+DEL "%~f0"
+exit
